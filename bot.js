@@ -13,27 +13,35 @@ client.on('message', message => {
 
 
 
-client.on('ready', function(){
-    var ms = 60000 ;
-    var setGame = ['RMDAN KREM','RMDAN KREM','^^help | ^^invite','RMDAN KREM'];
-    var i = -1;
-    var j = 0;
-    setInterval(function (){
-        if( i == -1 ){
-            j = 1;
+client.on('message', message => {
+ if (message.content.includes('disc ord.gg')){      
+                     if(!message.channel.guild) return message.reply ('')
+                 if (!message.member.hasPermissions(['MANAGE_MESSAGES'])){
+    message.delete() 
+     var member = message.member
+    
+ 
+       
+          member.ban().then((member) => {
+              message.channel.send("", {embed: {
+              author: {
+              },
+              title: 'بسبب النشر ' + member.displayName + ' تم طرد',
+              color: 490101,
+              }
+            });
         }
-        if( i == (setGame.length)-1 ){
-            j = -1;
-        }
-        i = i+j;
-        client.user.setGame(setGame[i],`http://www.twitch.tv/GamerzBot`);
-    }, ms);
-
+      ) 
+    }
+}
 });
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+  client.user.setGame(`RMDAN KREM`,'https://www.twitch.tv/v5bz');
 });
+
+
+
 
 client.on('message', msg => {
   if (msg.content === 'ping') {
@@ -42,7 +50,7 @@ client.on('message', msg => {
 });
 
 client.on('ready',  () => {
-  console.log('By : حمو ');
+  console.log('By : حمو');
   console.log(`Logged in as * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
   console.log(`Logged in as * [ " ${client.user.username} " ] Users! [ " ${client.users.size} " ]`);
   console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
@@ -57,9 +65,9 @@ client.on("message", message => {
    message.react("😜")
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .addField("『XxGamingTeamxXBOT』 『اسم البوت』", true)
+      .addField("『HaMoBoT』 『اسم البوت』", true)
       
-      .addField("『ـ♥25』『مصمم البوت』", true)
+      .addField("『@! Z |ĦÂмØ♚#6947』『مصمم البوت』", true)
       
       .addField("『^help^』😘『اذا تبي جميع الاوامر مع اوامر اضافية』😵", true)
       
@@ -74,20 +82,7 @@ client.on("message", message => {
  }
 });
 
-prefix = "^^"
-client.on('message', message => {
 
-  if (message.content.startsWith( prefix + "z")) {
-  if (!message.channel.guild) return;
-  let args = message.content.split(" ").slice(1).join(' ');
-  client.channels.get("448204717185826816").send(
-      "\n" + "**" + " ● مرسل من قبل : " + "**" +
-      "\n" + "**" + "» " + message.author.tag + "**" +
-      "\n" + "**" + " ● اقتراحي هو : " + "**" +
-      "\n" + "**" + args + "**")
-
-  }
-  });
 
 
 client.on('message', message => {
@@ -365,7 +360,9 @@ client.on("message", message => {
 
 ^^support| القسم الثاني  الدعم الفني و المساعدة
 
-القسم الثالث مصمم البوت | @????
+القسم الثالث مصمم البوت | @! Z |ĦÂмØ♚#6947
+
+
 
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
@@ -424,7 +421,9 @@ client.on("message", message => {
 
 ^^support| القسم الثاني  الدعم الفني و المساعدة
 
-القسم الثالث مصمم البوت | @?????
+القسم الثالث مصمم البوت | @! Z |ĦÂмØ♚#6947
+
+ 
 
 
 
@@ -484,6 +483,8 @@ client.on("message", message => {
 ^^support| القسم الثاني  الدعم الفني و المساعدة
 
 القسم الثالث مصمم البوت | @! Z |ĦÂмØ♚#6947
+
+ 
 
 
 `)
@@ -951,61 +952,8 @@ client.on('message', message=>{
 
 })
   
-  client.on('message', message => {
- if (message.content.startsWith("!w")) {
-                                 var mentionned = message.mentions.users.first();
-             var mentionavatar;
-               if(mentionned){
-                   var mentionavatar = mentionned;
-               } else {
-                   var mentionavatar = message.author;
-                   
-               }
-               let bot;
-               if(message.author.bot) {
-                   bot = 'Bot'
-               } else {
-                   bot = 'User'
-               } 
-  var EsTeKnAN = new Discord.RichEmbed()
-  .setColor('RANDOM')
-  .setThumbnail(`${mentionavatar.avatarURL}`)
-  .addField("***شكرا الانضمامك الينا***" ,mentionavatar.username )
-  .setDescription('***WELCOME TO CLAN Z***')
-  .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
-   message.channel.sendEmbed(EsTeKnAN);
-  }
-});
   
-  
-  client.on('message', message => {
- if (message.content.startsWith("ولكم")) {
-                                 var mentionned = message.mentions.users.first();
-             var mentionavatar;
-               if(mentionned){
-                   var mentionavatar = mentionned;
-               } else {
-                   var mentionavatar = message.author;
-                   
-               }
-               let bot;
-               if(message.author.bot) {
-                   bot = 'Bot'
-               } else {
-                   bot = 'User'
-               } 
-  var EsTeKnAN = new Discord.RichEmbed()
-  .setColor('RANDOM')
-  .setThumbnail(`${mentionavatar.avatarURL}`)
-  .addField("***شكرا الانضمامك الينا***" ,mentionavatar.username )
-  .setDescription('***بكل حب واحترام وشوق نستقبلك ونتمنى لك قضآء أجمل اللحظات ولآوقات معنا***')
-  .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
-   message.channel.sendEmbed(EsTeKnAN);
-  }
-});
-  
-  
-  client.on('message', message => {
+client.on('message', message => {
  if (message.content.startsWith("منور")) {
                                  var mentionned = message.mentions.users.first();
              var mentionavatar;
@@ -1029,10 +977,63 @@ client.on('message', message=>{
   .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
    message.channel.sendEmbed(EsTeKnAN);
   }
-});
-  
-  
-  
+});  
+
+
+client.on('message', message => {
+ if (message.content.startsWith("ولكم")) {
+                                 var mentionned = message.mentions.users.first();
+             var mentionavatar;
+               if(mentionned){
+                   var mentionavatar = mentionned;
+               } else {
+                   var mentionavatar = message.author;
+                   
+               }
+               let bot;
+               if(message.author.bot) {
+                   bot = 'Bot'
+               } else {
+                   bot = 'User'
+               } 
+  var EsTeKnAN = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .setThumbnail(`${mentionavatar.avatarURL}`)
+  .addField("***شكرا الانضمامك الينا***" ,mentionavatar.username )
+  .setDescription('***بكل حب واحترام وشوق نستقبلك ونتمنى لك قضآء أجمل اللحظات ولآوقات معنا***')
+  .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
+   message.channel.sendEmbed(EsTeKnAN);
+  }
+});  
+
+
+client.on('message', message => {
+ if (message.content.startsWith("!")) {
+                                 var mentionned = message.mentions.users.first();
+             var mentionavatar;
+               if(mentionned){
+                   var mentionavatar = mentionned;
+               } else {
+                   var mentionavatar = message.author;
+                   
+               }
+               let bot;
+               if(message.author.bot) {
+                   bot = 'Bot'
+               } else {
+                   bot = 'User'
+               } 
+  var EsTeKnAN = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .setThumbnail(`${mentionavatar.avatarURL}`)
+  .addField("***شكرا الانضمامك الينا***" ,mentionavatar.username )
+  .setDescription('***XxGamingTeamxX***')
+  .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
+   message.channel.sendEmbed(EsTeKnAN);
+  }
+});  
+
+
   
 client.on('message', message => {
  if (message.content.startsWith("ترحيب 1")) {
@@ -1303,6 +1304,135 @@ client.on('message', message => {
   }
 });
 
+client.on('message', message => {
+    if (message.content.startsWith("رابط")) {
+        message.channel.createInvite({
+        thing: true,
+        maxUses: 1,
+        maxAge: 3600,
+    }).then(invite =>
+      message.author.sendMessage(invite.url)
+    )
+    const embed = new Discord.RichEmbed()
+        .setColor("RANDOM")
+          .setDescription("تم أرسال الرابط برسالة خاصة")
+           .setAuthor(client.user.username, client.user.avatarURL)
+                 .setAuthor(client.user.username, client.user.avatarURL)
+                .setFooter('طلب بواسطة: ' + message.author.tag)
+
+      message.channel.sendEmbed(embed).then(message => {message.delete(10000)})
+              const Embed11 = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        
+    .setDescription("** الرابط : ساعه | عدد استخدامات الرابط : 1**")
+      message.author.sendEmbed(Embed11)
+    }
+}); 
+
+ client.on('message', message => {
+                    var prefix = "#";
+
+           if (message.content.startsWith(prefix + "id")) {
+                     if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات :x:`);
+
+                message.guild.fetchInvites().then(invs => {
+      let member = client.guilds.get(message.guild.id).members.get(message.author.id);
+      let personalInvites = invs.filter(i => i.inviter.id === message.author.id);
+      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
+      var moment = require('moment');
+      var args = message.content.split(" ").slice(1);
+let user = message.mentions.users.first();
+var men = message.mentions.users.first();
+ var heg;
+ if(men) {
+     heg = men
+ } else {
+     heg = message.author
+ }
+var mentionned = message.mentions.members.first();
+  var h;
+ if(mentionned) {
+     h = mentionned
+ } else {
+     h = message.member
+ }
+        moment.locale('ar-TN');
+      var id = new  Discord.RichEmbed()
+       
+    .setColor("#0a0909")
+    .setAuthor(message.author.username, message.author.avatarURL) 
+.addField(': دخولك لديسكورد قبل', `${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} **\n** \`${moment(heg.createdTimestamp).fromNow()}\`` ,true) 
+.addField(': انضمامك لسيرفر قبل', `${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')} \n \`${moment(h.joinedAt).fromNow()}\``, true)
+.addField(': عدد الدعوات', inviteCount,false)
+.setFooter("-")  
+    message.channel.sendEmbed(id);
+})
+}
+    
+
+         
+     });
+
+client.on('message', message => {
+              if(!message.channel.guild) return;
+    var prefix = "$";
+    if(message.content.startsWith('$bc')) {
+    if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
+  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
+    let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
+    let copy = "z Bot";
+    let request = `Requested By ${message.author.username}`;
+    if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
+    msg.react('✅')
+    .then(() => msg.react('❌'))
+    .then(() =>msg.react('✅'))
+
+    let reaction1Filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
+    let reaction2Filter = (reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id;
+  let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
+    let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
+    reaction1.on("collect", r => {
+    message.channel.send(`☑ | Done ... The Broadcast Message Has Been Sent For ${message.guild.members.size} Members`).then(m => m.delete(5000));
+    message.guild.members.forEach(m => {
+    var bc = new
+       Discord.RichEmbed()
+       .setColor('RANDOM')
+       .setTitle('Broadcast')
+       .addField('Server', message.guild.name)
+       .addField('Sender', message.author.username)
+       .addField('Message', args)
+       .setImage("")
+       .setThumbnail(message.author.avatarURL)
+       .setFooter(copy, client.user.avatarURL);
+    m.send({ embed: bc })
+    msg.delete();
+    })
+    })
+    reaction2.on("collect", r => {
+    message.channel.send(`**Broadcast Canceled.**`).then(m => m.delete(5000));
+    msg.delete();
+    })
+    })
+    }
+    });
+
+client.on('ready', function(){
+    var ms = 60000 ;
+    var setGame = ['RMDAN KREM','RMDAN KREM','^^help | ^^invite','RMDAN KREM'];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`http://www.twitch.tv/GamerzBot`);
+    }, ms);
+
+});
 
 client.on('message', function(message) {
     if (!message.member.hasPermissions(['ADMINISTRATOR'])){
@@ -1325,8 +1455,6 @@ client.on('message', function(message) {
     }
     }
 })
-
-
 
 
 // THIS  MUST  BE  THIS  WAY
